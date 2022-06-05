@@ -15,6 +15,6 @@
     "allowSyntheticDefaultImports": true,
     "paths": {}
   },
-  "include": ["src/index.tsx"],
+  "include": ["src/"],
   "exclude": ["src/**/*.test.{tsx, ts}", "src/**/*.stories.tsx"]
 }
