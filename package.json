@@ -1,10 +1,24 @@
 {
   "name": "luson-design",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "author": "lusons",
   "private": false,
   "module": "./dist/index.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "react",
+    "UI",
+    "designer"
+  ],
+  "homepage": "https://github.com/lusons/luson-design",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lusons/luson-design"
+  },
+  "files": ["dist"],
   "dependencies": {
     "classnames": "^2.3.1"
   },
@@ -94,7 +108,8 @@
     "build:css": "node-sass src/styles/index.scss ./dist/index.css",
     "test": "node scripts/test.js",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "preinstall": "yarn build"
   },
   "eslintConfig": {
     "extends": [
