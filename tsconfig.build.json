@@ -1,0 +1,20 @@
+{
+  "lib": [
+    "dom",
+    "dom.iterable",
+    "esnext"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "ES5",
+    "declaration": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "paths": {}
+  },
+  "include": ["src/index.tsx"],
+  "exclude": ["src/**/*.test.{tsx, ts}", "src/**/*.stories.tsx"]
+}
