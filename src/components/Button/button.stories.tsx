@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import { Button } from ".";
+import { Button } from "./button";
 import { action } from '@storybook/addon-actions'
 import { withInfo } from '@storybook/addon-info'
 

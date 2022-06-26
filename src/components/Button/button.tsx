@@ -25,10 +25,10 @@ interface BaseButtonPropTypes {
 }
 
 type NativeButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
-type AnchorNuttonProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+type AnchorButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const Button: React.FC<
-  BaseButtonPropTypes & Omit<NativeButtonProps, "type"> & AnchorNuttonProps
+  BaseButtonPropTypes & Omit<NativeButtonProps, "type"> & AnchorButtonProps
 > = ({
   className,
   disabled = false,

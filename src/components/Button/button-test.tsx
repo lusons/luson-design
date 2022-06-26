@@ -1,4 +1,4 @@
-import { Button } from ".";
+import { Button } from "./button";
 
 export const ButtonTest = () => {
   return (

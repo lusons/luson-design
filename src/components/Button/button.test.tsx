@@ -1,5 +1,5 @@
 import { render, fireEvent } from "@testing-library/react";
-import { Button } from ".";
+import { Button } from "./button";
 import { screen } from "@testing-library/dom";
 
 describe("button", () => {
