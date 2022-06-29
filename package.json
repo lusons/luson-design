@@ -1,6 +1,6 @@
 {
   "name": "luson-design",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "lusons",
   "private": false,
   "module": "./dist/index.js",
