@@ -1,13 +1,13 @@
-import classNames from "classnames";
-import { useCallback, useContext } from "react";
+import classNames from 'classnames'
+import { useCallback, useContext } from 'react'
 import { menuContext } from './menu'
 
 export interface MenuItemPropsType {
-  index: number;
-  disabled?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-  children?: React.ReactNode;
+  index: number
+  disabled?: boolean
+  className?: string
+  style?: React.CSSProperties
+  children?: React.ReactNode
 }
 
 export const MenuItem: React.FC<MenuItemPropsType> = ({
@@ -19,13 +19,13 @@ export const MenuItem: React.FC<MenuItemPropsType> = ({
 }) => {
   const context = useContext(menuContext)
 
-  const classes = classNames("menu-item", className, {
-    "is-disabled": disabled,
-    'is-active': context.index === index
-  });
+  const classes = classNames('menu-item', className, {
+    'is-disabled': disabled,
+    'is-active': context.index === index,
+  })
 
   const handleClick = useCallback(() => {
-    if(context.onSelect && !disabled) {
+    if (context.onSelect && !disabled) {
       context.onSelect(index)
     }
   }, [context, disabled, index])
@@ -34,5 +34,5 @@ export const MenuItem: React.FC<MenuItemPropsType> = ({
     <li className={classes} style={style} onClick={handleClick}>
       {children}
     </li>
-  );
-};
+  )
+}

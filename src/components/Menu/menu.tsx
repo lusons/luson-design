@@ -1,54 +1,54 @@
-import classNames from "classnames";
-import { createContext, useCallback, useState } from "react";
+import classNames from 'classnames'
+import { createContext, useCallback, useState } from 'react'
 
-export type SelectCallback = (selectedIndex: number) => void;
+export type SelectCallback = (selectedIndex: number) => void
 
-export type MenuMode = "vertical" | "horizontal";
+export type MenuMode = 'vertical' | 'horizontal'
 
 export interface MenuPropsType {
-  defaultIndex?: number;
-  className?: string;
-  mode?: MenuMode;
-  style?: React.CSSProperties;
-  onSelect?: SelectCallback;
-  children: React.ReactNode;
+  defaultIndex?: number
+  className?: string
+  mode?: MenuMode
+  style?: React.CSSProperties
+  onSelect?: SelectCallback
+  children: React.ReactNode
 }
 
 export interface IMenuContext {
-  index: number;
-  onSelect?: SelectCallback;
+  index: number
+  onSelect?: SelectCallback
 }
 
-export const menuContext = createContext<IMenuContext>({ index: 0 });
+export const menuContext = createContext<IMenuContext>({ index: 0 })
 
 export const Menu: React.FC<MenuPropsType> = ({
   defaultIndex = 0,
   className,
-  mode = "horizontal",
+  mode = 'horizontal',
   style,
   children,
   onSelect,
 }) => {
-  const [currentSelect, setSelect] = useState(defaultIndex);
+  const [currentSelect, setSelect] = useState(defaultIndex)
 
   const handleClick = useCallback(
     (index: number) => {
-      setSelect(index);
+      setSelect(index)
       if (onSelect) {
-        onSelect(index);
+        onSelect(index)
       }
     },
-    [onSelect]
-  );
+    [onSelect],
+  )
 
   const passedContext: IMenuContext = {
     index: currentSelect,
     onSelect: handleClick,
-  };
+  }
 
-  const classes = classNames("luson-menu", className, {
-    "menu-vertical": mode === "vertical",
-  });
+  const classes = classNames('luson-menu', className, {
+    'menu-vertical': mode === 'vertical',
+  })
 
   return (
     <ul className={classes} style={style}>
@@ -56,5 +56,5 @@ export const Menu: React.FC<MenuPropsType> = ({
         {children}
       </menuContext.Provider>
     </ul>
-  );
-};
+  )
+}

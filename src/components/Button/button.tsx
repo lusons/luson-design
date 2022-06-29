@@ -1,34 +1,34 @@
-import classNames from "classnames";
-import React from "react";
+import classNames from 'classnames'
+import React from 'react'
 
 export enum ButtonSize {
-  Large = "large",
-  Small = "small",
-  Middle = 'middle'
+  Large = 'large',
+  Small = 'small',
+  Middle = 'middle',
 }
 
 export enum ButtonType {
-  Primary = "primary",
-  Default = "default",
-  Danger = "danger",
-  Link = "link",
+  Primary = 'primary',
+  Default = 'default',
+  Danger = 'danger',
+  Link = 'link',
 }
 
 interface BaseButtonPropTypes {
-  className?: string;
-  disabled?: boolean;
-  size?: 'large' | 'small' | 'middle';
-  type?: ButtonType[keyof ButtonType];
-  href?: string;
-  htmlType?: "button" | "submit" | "reset";
-  children: React.ReactNode;
+  className?: string
+  disabled?: boolean
+  size?: 'large' | 'small' | 'middle'
+  type?: ButtonType[keyof ButtonType]
+  href?: string
+  htmlType?: 'button' | 'submit' | 'reset'
+  children: React.ReactNode
 }
 
-type NativeButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
-type AnchorButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+type NativeButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
+type AnchorButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export const Button: React.FC<
-  BaseButtonPropTypes & Omit<NativeButtonProps, "type"> & AnchorButtonProps
+  BaseButtonPropTypes & Omit<NativeButtonProps, 'type'> & AnchorButtonProps
 > = ({
   className,
   disabled = false,
@@ -39,18 +39,18 @@ export const Button: React.FC<
   htmlType,
   ...resetProps
 }) => {
-  const classes = classNames("btn", className, {
+  const classes = classNames('btn', className, {
     [`btn-${type}`]: type,
     [`btn-${size}`]: size !== 'middle',
     disabled: type === ButtonType.Link && disabled,
-  });
+  })
 
   if (type === ButtonType.Link) {
     return (
       <a className={classes} href={href} {...resetProps}>
         {children}
       </a>
-    );
+    )
   }
 
   return (
@@ -62,5 +62,5 @@ export const Button: React.FC<
     >
       {children}
     </button>
-  );
-};
+  )
+}
