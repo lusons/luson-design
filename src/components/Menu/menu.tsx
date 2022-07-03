@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { createContext, useCallback, useState } from 'react'
+import { MenuItem, MenuItemPropsType } from './menu-item'
 
 export type SelectCallback = (selectedIndex: number) => void
 
@@ -21,7 +22,9 @@ export interface IMenuContext {
 
 export const menuContext = createContext<IMenuContext>({ index: 0 })
 
-export const Menu: React.FC<MenuPropsType> = ({
+export const Menu: React.FC<MenuPropsType> & {
+  Item?: React.FC<MenuItemPropsType>
+} = ({
   defaultIndex = 0,
   className,
   mode = 'horizontal',
@@ -58,3 +61,5 @@ export const Menu: React.FC<MenuPropsType> = ({
     </ul>
   )
 }
+
+Menu.Item = MenuItem
