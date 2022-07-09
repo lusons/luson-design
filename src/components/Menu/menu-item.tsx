@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useCallback, useContext } from 'react'
+import React, { useCallback, useContext } from 'react'
 import { menuContext } from './menu'
 
 export interface MenuItemPropsType {

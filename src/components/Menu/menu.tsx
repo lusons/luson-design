@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { createContext, useCallback, useState } from 'react'
+import React, { createContext, useCallback, useState } from 'react'
 import { MenuItem, MenuItemPropsType } from './menu-item'
 
 export type SelectCallback = (selectedIndex: number) => void
